@@ -1,4 +1,4 @@
-- dashboard: bc_gov_analytics__content
+- dashboard: bc_gov_analytics_content
   title: BC Gov Analytics - Content
   layout: newspaper
   refresh: 30 minutes
