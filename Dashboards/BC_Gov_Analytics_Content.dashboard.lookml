@@ -235,8 +235,8 @@
     col: 0
     width: 12
     height: 10
-  - name: Top Themes by Google.com Searches
-    title: Top Themes by Google.com Searches
+  - name: Top Themes by Google Searches
+    title: Top Themes by Google Searches
     model: google_api
     explore: google_search
     type: looker_column
