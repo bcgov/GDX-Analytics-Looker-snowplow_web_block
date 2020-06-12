@@ -220,7 +220,7 @@
     show_null_labels: false
     show_totals_labels: false
     show_silhouette: false
-    totals_color: "#808080"
+    totals_color: "#d92828"
     listen:
       Date Range: page_views.page_view_start_date
       City: page_views.geo_city_and_region
