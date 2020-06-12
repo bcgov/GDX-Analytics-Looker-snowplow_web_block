@@ -2,9 +2,6 @@
   title: BC Gov Analytics - Content
   layout: newspaper
   refresh: 30 minutes
-  filters:
-  - name: City
-    default_value: 'Burnaby'
   elements:
   - name: Top Downloaded Files
     title: Top Downloaded Files
@@ -577,7 +574,7 @@
   - name: City
     title: City
     type: field_filter
-    default_value: ''
+    default_value: 'Burnaby'
     allow_multiple_values: true
     required: false
     model: snowplow_web_block
