@@ -179,9 +179,9 @@
     model: snowplow_web_block
     explore: searches
     type: table
-    fields: [searches.search_terms, searches.search_count]
+    fields: [searches.search_terms_workbc, searches.search_count]
     filters:
-      searches.search_terms: "-EMPTY"
+      searches.search_terms_workbc: "-EMPTY"
     sorts: [searches.search_count desc]
     limit: 20
     column_limit: 50
@@ -202,7 +202,7 @@
     conditional_formatting_include_nulls: false
     series_labels:
       searches.terms: Search Term
-      searches.search_terms: Search Term
+      searches.search_terms_workbc: Search Term
     limit_displayed_rows_values:
       show_hide: show
       first_last: first
