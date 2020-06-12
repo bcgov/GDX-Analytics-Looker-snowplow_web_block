@@ -3,7 +3,7 @@
   layout: newspaper
   refresh: 30 minutes
   elements:
-  - name: Top Downloaded Files
+  - name: Top Files Downloaded
     title: Top Downloaded Files
     model: snowplow_web_block
     explore: clicks
