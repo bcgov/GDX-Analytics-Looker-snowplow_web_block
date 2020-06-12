@@ -1,7 +1,9 @@
 - dashboard: bc_gov_analytics_content
   title: BC Gov Analytics - Content
   layout: newspaper
-  refresh: 30 minutes
+  refresh: 30 minutesfilters:
+  - name: filter_name
+    city: "Burnaby"
   elements:
   - name: Top Downloaded Files
     title: Top Downloaded Files
