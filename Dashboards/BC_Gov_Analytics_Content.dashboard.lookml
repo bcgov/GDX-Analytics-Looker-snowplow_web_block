@@ -4,7 +4,7 @@
   refresh: 30 minutes
   elements:
   - name: Top Files Downloaded
-    title: Top Downloaded Files
+    title: Top Files Downloaded
     model: snowplow_web_block
     explore: clicks
     type: table
