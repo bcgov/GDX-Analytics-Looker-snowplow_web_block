@@ -4,7 +4,12 @@ include: "/Includes/date_comparisons_common.view"
 
 
 view: page_views {
-  sql_table_name: derived.page_views ;;
+  sql_table_name:
+  {% if page_views.date_start >= page_views.current_date %}
+  liquid_tables.seven_day_derived_page_views
+  {% else %}
+  derived.page_views
+  {% endif %} ;;
 
   extends: [shared_fields_common,shared_fields_no_session,date_comparisons_common]
 
@@ -32,6 +37,11 @@ view: page_views {
 
 
   # DIMENSIONS
+
+  dimension: current_date {
+    type: date
+    sql: CURRENT_DATE ;;
+  }
 
   # Page View
 
