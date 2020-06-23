@@ -5,7 +5,7 @@ include: "/Includes/date_comparisons_common.view"
 
 view: page_views {
   sql_table_name:
-  {% if page_views.date_start >= page_views.current_date %}
+  {% if page_views.date_start >= page_views.liquid_date_picker %}
   liquid_tables.seven_day_derived_page_views
   {% else %}
   derived.page_views
@@ -38,9 +38,9 @@ view: page_views {
 
   # DIMENSIONS
 
-  dimension: current_date {
+  dimension: liquid_date_picker {
     type: date
-    sql: CURRENT_DATE ;;
+    sql: DATEADD(day,-7,CURRENT_DATE) ;;
   }
 
   # Page View
