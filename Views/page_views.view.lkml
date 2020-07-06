@@ -4,14 +4,18 @@ include: "/Includes/date_comparisons_common.view"
 
 
 view: page_views {
-  sql_table_name:
-  {% if page_views.date_start >= page_views.liquid_date_picker %}
-  liquid_tables.seven_day_derived_page_views
-  {% else %}
-  derived.page_views
-  {% endif %} ;;
 
   extends: [shared_fields_common,shared_fields_no_session,date_comparisons_common]
+
+  sql_table_name:
+  {% assign seven_days_ago = "now" | date: "%s" | minus: 604800 %}
+  {% assign selected_start = page_views.date_start | date: "%s" %}
+  {% if selected_start >= seven_days_ago %}
+    liquid_tables.seven_day_derived_page_views
+  {% else %}
+    derived.page_views
+  {% endif %}
+  TESTING::{% date_start flexible_filter_date_range %}::;;
 
   dimension_group: filter_start {
     sql: ${TABLE}.page_view_start_time ;;
@@ -38,9 +42,9 @@ view: page_views {
 
   # DIMENSIONS
 
-  dimension: liquid_date_picker {
-    type: date
-    sql: DATEADD(day,-7,CURRENT_DATE) ;;
+  dimension: somedate {
+    type:  date
+    sql: {% date_start flexible_filter_date_range %};;
   }
 
   # Page View
