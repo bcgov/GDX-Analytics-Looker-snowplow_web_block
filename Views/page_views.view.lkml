@@ -15,7 +15,8 @@ view: page_views {
   {% else %}
     derived.page_views
   {% endif %}
-  TESTING::{% date_start flexible_filter_date_range %}::;;
+  --TESTING::{% date_start flexible_filter_date_range %}, {{ date_start flexible_filter_date_range }}
+  ;;
 
   dimension_group: filter_start {
     sql: ${TABLE}.page_view_start_time ;;
